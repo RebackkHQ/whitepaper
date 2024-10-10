@@ -1,0 +1,94 @@
+% Options.sty – Professional Whitepaper Customization
+
+% Better typography with microtype
+\usepackage[
+    activate={true,nocompatibility},
+    final,
+    tracking=true,
+    kerning=true,
+    spacing=true,
+    factor=1100,
+    stretch=10,
+    shrink=10
+]{microtype}
+
+% Set English as the language and define custom contents title
+\usepackage[english]{babel}
+\addto\captionsenglish{\renewcommand{\contentsname}{Table of Contents}}
+
+% Drop caps for chapter openings
+\usepackage{lettrine}
+
+% Support for graphics and custom colors
+\usepackage{graphicx, xcolor}
+
+% Custom font choice (replace with your preferred font if needed)
+\usepackage{sans}
+
+% TikZ for professional diagrams
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+
+% Spacing and paragraph formatting adjustments
+\renewcommand{\baselinestretch}{1.15}  % Slightly more line spacing for better readability
+\setlength{\parskip}{6pt}              % Space between paragraphs
+\setlength{\parindent}{1.5em}          % Standard paragraph indentation
+
+% Frenchspacing: Removes additional space between sentences
+\frenchspacing
+
+% Prevent widows and orphans (single lines of text at the top/bottom of pages)
+\widowpenalty=10000
+\clubpenalty=10000
+
+% Page layout with slightly larger inner margin for binding
+\usepackage[
+    paperheight=11in,
+    paperwidth=8.5in,
+    top=1in,
+    bottom=1in,
+    outer=1in,
+    inner=1.25in
+]{geometry}
+
+% Prevent overfull lines by adjusting text flow dynamically
+\sloppy
+
+% Table of Contents formatting with custom chapter titles
+\usepackage[titles]{tocloft}
+\renewcommand{\cftchapfont}{\large\scshape}  % Small caps for chapter titles in ToC
+\renewcommand{\cftchappagefont}{\normalfont}
+\renewcommand{\numberline}[1]{\thechapter.\ }  % Include chapter numbers in ToC
+
+% Customize chapter headings: Roman numerals, centered, small caps
+\usepackage[center,sc]{titlesec}
+\renewcommand{\thechapter}{\Roman{chapter}}   % Use Roman numerals for chapters
+
+\titleformat{\chapter}[block]
+  {\normalfont\scshape\huge\centering}         % Chapter title in large small caps
+  {\thechapter\\}                              % Roman numeral on its own line
+  {10pt}                                       % Space between chapter number and title
+  {}
+
+% Headers and footers customization
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}                  % Allow space for header
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.5pt}           % Thin header rule for a professional look
+\renewcommand{\footrulewidth}{0.5pt}           % Thin footer rule
+\fancyhf[CO]{\thepage}                         % Centered page numbers in the footer
+\fancyhead[LE]{\itshape\authorname}            % Author's name in left header
+\fancyhead[RO]{\itshape\booktitle}             % Book title in right header
+
+% Define custom colors for highlighting or branding
+\definecolor{customgold}{RGB}{203,161,53}
+
+% Bibliography (if needed)
+\usepackage[style=numeric]{biblatex}
+\addbibresource{references.bib}
+
+% Prevent lines from being too close to the page edge
+\setlength{\emergencystretch}{3em}
+
+% Fix chapter number format to Roman numerals for chapter headings

@@ -1,0 +1,52 @@
+% Caraumã book template by @jndgomes
+% 2024 (c) Janderson Gomes
+% See more <artientista.blogspot.com> or <carauman.blogspot.com>
+
+% Paper size is in preamble.sty
+\documentclass[12pt,openany]{book} 
+
+% Definindo proporção áurea
+\newcommand{\goldenratio}{1.618}
+
+% Codificação de entrada e saída
+\usepackage[T1]{fontenc}
+
+% Informações do livro
+\newcommand{\authorname}{Esportzvio Private Limited}
+\newcommand{\translatorname}{}
+\newcommand{\booktitle}{Rebackk Whitepaper}
+\newcommand{\subtitle}{A Comprehensive Cybersecurity Solution}
+\newcommand{\publisher}{Esportzvio}
+\newcommand{\editionyear}{2024}
+\newcommand{\isbn}{}
+\title{\booktitle}
+\author{\authorname}
+
+% Pacotes adicionais
+\usepackage{misc/options}
+\usepackage{fancyhdr} % For fancy header and footer
+
+\begin{document}
+
+% Main matter
+\mainmatter
+\pagestyle{fancy}                  % Fancy page style for main content
+
+% Abstract
+\input{content/abstract}           % Chapter 1 
+
+\input{frontmatter/tocpage}
+
+% Content of chapters
+\input{content/chapter1}           % Chapter 1 
+\input{content/chapter2}           % Chapter 2
+\input{content/chapter3}           % Chapter 3
+\input{content/chapter4}           % Chapter 4
+\input{content/chapter5}           % Chapter 5
+\input{content/chapter6}           % Chapter 6
+\input{content/chapter7}           % Chapter 7
+\input{content/chapter8}           % Chapter 8
+\input{content/chapter9}           % Chapter 9
+\input{content/chapter10}           % Chapter 10
+
+\end{document}
